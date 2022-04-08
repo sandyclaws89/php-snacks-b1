@@ -33,16 +33,38 @@
                     'nome' =>'Genova',
                     'punteggio' => 69,
                 ],
-            ]
+            ],
+            [
+                'casa' => [
+                    'nome' =>'Taranto',
+                    'punteggio' => 23,
+                ],
+                'ospite' => [
+                    'nome' =>'Verona',
+                    'punteggio' => 74,
+                ],
+            ],
+            [
+                'casa' => [
+                    'nome' =>'Lucania',
+                    'punteggio' => 124,
+                ],
+                'ospite' => [
+                    'nome' =>'Sassari',
+                    'punteggio' => 124,
+                ],
+            ],
         ];
         ?>
         <?php
-        $arr_match = [];
+        $arr_match = array_chunk($array_partite, 2);
+        // print_r(array_chunk($array_partite, 2));
+        echo $arr_match[0]['casa'][0];
         for ($_i=0; $_i < count($array_partite); $_i++) {
            
             $array_team = array_column($array_partite[$_i], 'nome');
             // print_r($array_team); 
-            echo ($array_team);
+            // echo ($array_team[$_i]);
             // echo $match[$_i];
             // $score = array_column($array_partite[$_i], 'punteggio');
             // print_r($score);
@@ -52,7 +74,8 @@
         //    echo $home_team;
             // echo join("-",$array_partite[$_i]);
         }
-        // echo $match;
+        // echo $array_team[0];
+        // echo $array_team[1];
    ?>
 </body>
 </html>
