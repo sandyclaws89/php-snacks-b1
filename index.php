@@ -63,26 +63,42 @@
         // echo $arr_match[0]['casa'][0];
         for ($_i=0; $_i < count($array_partite); $_i++) {
             $array_team = array_column($array_partite[$_i], 'nome');
-            var_dump($array_team);
+            
+            echo (implode('-', $array_team));
+            // var_dump($array_team);
+
+
             $array_score = array_column($array_partite[$_i], 'punteggio');
-            var_dump($array_score);
+            echo (implode('-', $array_score));
+            // var_dump($array_score);
+            // echo ($result_match . array_merge($array_team, $array_score) );
+            $result_match  = array_merge($array_team, $array_score);
+            // var_dump($result_match);
+            // print_r ($result_match);
 
             // echo current($array_team);
         }
+        // $frutta = array('mela','pera','pesca');
+        // $verdura = array('carota','pomodoro','patate');
+
+        // // unisco le due array
+        // $spesa = array_merge($frutta, $verdura);
+        // var_dump ($spesa);
+        // var_dump($array_team);
         // echo $array_team[0];
         // echo $array_team[1];
        
-        $carBrand = ['Ferrari', 'Porsche', 'Lamborghini'];
+        // $carBrand = ['Ferrari', 'Porsche', 'Lamborghini'];
         
-        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        next($carBrand);
-        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Porsche, 1
-        prev($carBrand);
-        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        reset($carBrand);
-        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        end($carBrand);
-        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Lamborghini, 2
+        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        // next($carBrand);
+        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Porsche, 1
+        // prev($carBrand);
+        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        // reset($carBrand);
+        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        // end($carBrand);
+        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Lamborghini, 2
    ?>
 </body>
 </html>
