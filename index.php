@@ -88,6 +88,16 @@
         <label for=""> Inserisci il nome</label>
         <input type="text" name="name">
    </form>
+
+   <form action="" method="get">
+   <label for="">Inserisci la email</label>
+        <input type="text" name="mail">
+   </form>
+
+   <form action="" method="get">
+   <label for="">Inserisci la tua età</label>
+        <input type="text" name="age">
+   </form>
    <?php
    
     $name = $_GET['name'];
@@ -97,15 +107,24 @@
         echo 'Accesso negato';
     }
     // echo $name;
+    
     $mail = $_GET['mail'];
-    $age = $_GET['age'];
-    
-    
-    $cap = "97100";
-    
-    if (strlen($cap) != 5) {
-        echo "Il CAP deve avere lunghezza pari a 5";
+    if(!(stripos($mail, '@')!==false && stripos($mail, '.')!== false)) {
+        echo 'L\'email deve contenere obbligatoriamente una @ e un punto';
     }
+
+
+    $age = $_GET['age'];
+    if (!(is_numeric($age))) {
+        echo 'Non è un numero';
+    } 
+    
+    
+    // $cap = "97100";
+    
+    // if (strlen($cap) != 5) {
+    //     echo "Il CAP deve avere lunghezza pari a 5";
+    // }
    ?>
 
 
