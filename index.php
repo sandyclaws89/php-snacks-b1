@@ -61,44 +61,53 @@
         // var_dump($arr_match);
         // print_r(array_chunk($array_partite, 2));
         // echo $arr_match[0]['casa'][0];
-        for ($_i=0; $_i < count($array_partite); $_i++) {
-            $array_team = array_column($array_partite[$_i], 'nome');
+        // for ($_i=0; $_i < count($array_partite); $_i++) {
+            // $array_team = array_column($array_partite[$_i], 'nome');
             
-            echo (implode('-', $array_team));
+            // echo (implode('-', $array_team));
             // var_dump($array_team);
 
 
-            $array_score = array_column($array_partite[$_i], 'punteggio');
-            echo (implode('-', $array_score));
+            // $array_score = array_column($array_partite[$_i], 'punteggio');
+            // echo (implode('-', $array_score));
             // var_dump($array_score);
             // echo ($result_match . array_merge($array_team, $array_score) );
-            $result_match  = array_merge($array_team, $array_score);
+            // $result_match  = array_merge($array_team, $array_score);
             // var_dump($result_match);
             // print_r ($result_match);
 
             // echo current($array_team);
-        }
-        // $frutta = array('mela','pera','pesca');
-        // $verdura = array('carota','pomodoro','patate');
-
-        // // unisco le due array
-        // $spesa = array_merge($frutta, $verdura);
-        // var_dump ($spesa);
-        // var_dump($array_team);
-        // echo $array_team[0];
-        // echo $array_team[1];
-       
-        // $carBrand = ['Ferrari', 'Porsche', 'Lamborghini'];
-        
-        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        // next($carBrand);
-        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Porsche, 1
-        // prev($carBrand);
-        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        // reset($carBrand);
-        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
-        // end($carBrand);
-        // echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Lamborghini, 2
+        // }     
    ?>
+   <?php
+   /*SNACK2 */
+   /*
+   Passare come parametri GET name, mail e age e verificare (cercando i metodi che non conosciamo nella documentazione) che name sia più lungo di 3 caratteri, che mail contenga un punto e una chiocciola e che age sia un numero. Se tutto è ok stampare “Accesso riuscito”, altrimenti “Accesso negato”
+   */?>
+   <form action="" method="get">
+        <label for=""> Inserisci il nome</label>
+        <input type="text" name="name">
+   </form>
+   <?php
+   
+    $name = $_GET['name'];
+    if( strlen($name) > 3) {
+        echo 'Accesso riuscito';
+    } else {
+        echo 'Accesso negato';
+    }
+    // echo $name;
+    $mail = $_GET['mail'];
+    $age = $_GET['age'];
+    
+    
+    $cap = "97100";
+    
+    if (strlen($cap) != 5) {
+        echo "Il CAP deve avere lunghezza pari a 5";
+    }
+   ?>
+
+
 </body>
 </html>
