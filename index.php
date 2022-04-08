@@ -57,25 +57,32 @@
         ];
         ?>
         <?php
-        $arr_match = array_chunk($array_partite, 2);
+        // $arr_match = array_chunk($array_partite, 4);
+        // var_dump($arr_match);
         // print_r(array_chunk($array_partite, 2));
-        echo $arr_match[0]['casa'][0];
+        // echo $arr_match[0]['casa'][0];
         for ($_i=0; $_i < count($array_partite); $_i++) {
-           
             $array_team = array_column($array_partite[$_i], 'nome');
-            // print_r($array_team); 
-            // echo ($array_team[$_i]);
-            // echo $match[$_i];
-            // $score = array_column($array_partite[$_i], 'punteggio');
-            // print_r($score);
-            
-           
-        //    $home_team
-        //    echo $home_team;
-            // echo join("-",$array_partite[$_i]);
+            var_dump($array_team);
+            $array_score = array_column($array_partite[$_i], 'punteggio');
+            var_dump($array_score);
+
+            // echo current($array_team);
         }
         // echo $array_team[0];
         // echo $array_team[1];
+       
+        $carBrand = ['Ferrari', 'Porsche', 'Lamborghini'];
+        
+        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        next($carBrand);
+        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Porsche, 1
+        prev($carBrand);
+        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        reset($carBrand);
+        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Ferrari, 0
+        end($carBrand);
+        echo "Elemento corrente ".current($carBrand).", ".key($carBrand)."\n"; // Elemento corrente Lamborghini, 2
    ?>
 </body>
 </html>
